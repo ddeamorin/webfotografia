@@ -1,0 +1,15 @@
+
+  <div class="gallery-container">
+
+
+    <% for(let i = 0; i < imagenes.length; i++){ %>
+
+
+    <div class="gallery--item" data-aos="fade-up"
+     data-aos-duration="2000">
+      <a href="/images/<%= imagenes[i].ruta %>" data-lightbox="mygallery" data-title="<%= imagenes[i].nombre%> - <%= imagenes[i].lugar%>"><img src="/images/<%= imagenes[i].ruta %>" alt="" class="gallery--img"></a>
+
+    </div>
+    <% } %>
+
+  </div> 

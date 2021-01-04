@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background:white;
+     
+}
+
+
+.container{
+    max-width: 1000px;  
+    
+}
+
+.img1{
+    max-width: 300px;    
+
+}
+
+.img2{
+    max-width: 200px;    
+
+}
+
+/* .row{
+    background: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 2px rgb(97, 97, 97) ;   
+        
+} */
+.btn1{
+   border: none;
+   outline:none;
+   height: 50px;
+   width: 100%;
+   background-color:black;
+   color: white;
+   border-radius: 4px;
+   font-weight: bold;
+   transition: .3s;
+}
+
+.btn1:hover{
+    background: white;
+    border: 1px solid;
+    color: black;
+}
