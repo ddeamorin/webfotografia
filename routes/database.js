@@ -25,7 +25,7 @@ router.get('/imagenesAdmin',databaseMiddleware.auth, databaseController.imagenes
 router.post('/imagenesAdmin', databaseMiddleware.auth, databaseController.filtrarImagenes)
 
 router.get('/editarImagen/:id',databaseMiddleware.auth, databaseController.verEditar)
-router.post('/editarImagen/:id',databaseMiddleware.auth, upload.any(), databaseController.editar)
+router.post('/editarImagen/:id',databaseMiddleware.auth, upload.any(), databaseMiddleware.editMiddleware, databaseController.editar)
 
 router.get("/login", databaseController.verLogin)
 router.post("/login", databaseController.ingresar)

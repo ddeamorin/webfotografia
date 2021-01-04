@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const { Op, where } = require("sequelize");
 const db = require('../database/models/index');
 
@@ -200,7 +201,6 @@ const databaseController = {
     },
     cargaDatos : function(req, res){
         let imagen = req.files[0].filename 
-  
         if(req.body.checkindex == undefined){
           req.body.checkindex = "off"
         }
@@ -233,20 +233,25 @@ const databaseController = {
         })
       },
       editar : function(req,res){
+        const errors = validationResult(req)
+        if(!errors.isEmpty()){
+          console.log(errors)
+          res.render(`database/04-editarImagen`, {errors : errors.errors, imagenes:req.body})
+        }else{
         id = req.params.id
-        let imagen = req.files[0].filename
         if(req.body.checkindex == undefined){
           req.body.checkindex = "off"
         }
-  
         if (Array.isArray(req.body.vista)==true) {
           var vistaEdit = req.body.vista.join(", ")
         }else{
           var vistaEdit = req.body.vista
         }
+        if(typeof req.files[0] == "undefined"){
+          console.log("a")
+
         db.Overview.update({
           id : req.params.id,
-          ruta: imagen,
           nombre : req.body.nombre,
           descripcion: req.body.descripcion,
           checkindex: req.body.checkindex,
@@ -254,11 +259,28 @@ const databaseController = {
           fecha:req.body.fecha,
           view:vistaEdit,
           rating: req.body.rating
-
         },{where: {id}}).then(function(){
           res.render('database/05-finalizado', {mensaje: 'editado', nombre:`la obra ${req.body.nombre}`})
-        })
-      },
+        })}else{
+          console.log("b")
+
+          let imagen = req.files[0].filename
+          db.Overview.update({
+            id : req.params.id,
+            imagen: imagen,
+            nombre : req.body.nombre,
+            descripcion: req.body.descripcion,
+            checkindex: req.body.checkindex,
+            lugar: req.body.lugar,
+            fecha:req.body.fecha,
+            view:vistaEdit,
+            rating: req.body.rating
+          },{where: {id}}).then(function(){
+            res.render('database/05-finalizado', {mensaje: 'editado', nombre:`la obra ${req.body.nombre}`})
+          })
+        }
+      }
+    },
       eliminarImagen:function(req,res){
         let id = req.params.id
         db.Overview.destroy({where : {id}}).then(function(){

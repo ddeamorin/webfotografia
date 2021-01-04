@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('../partials/01-head')%>
+        <%- include('../partials/01-head.ejs')%>
         
     </head>
     <body>
-      <%- include('../partials/02-header')%>       
-      <%- include('../partials/05-contacto')%>    
-
-
+      <%- include('../partials/02-header.ejs')%>    
+      <div>
+      <div class="container9" data-aos="fade-up"
+      data-aos-duration="2000">
+          <div class="contact-box" >
+            <div class="left" ></div>
+            <div class="right">
+              <h2 >Contactame</h2>
+              <form action="/contacto" method="POST">
+              <input type="text" name='nombre' class="field"  placeholder="Tu nombre">
+              <input type="email" name="email" class='field'  placeholder="Tu e-mail">
+              <textarea class="field area" name='mensaje' cols="3" rows="6"  placeholder="Escribe tu mensaje"
+              ></textarea>  
+              <button class="btn" type="submit" >Enviar</button>
+    
+            </form>
+    
+    
+                <h3>deamorindamian@gmail.com // +54 11 6797-4160</h3>
+    
+                <li>
+                  <a href="https://www.instagram.com/ddeamorin/">
+                    <i class="fab fa-instagram-square instag"></i>
+                  </a>
+                </li>
+    
+    
+            </div>
+    
+          </div>
+      </div> 
+      <footer>
+        <%- include('../partials/04-footer.ejs')%>
+       </footer>
+      </div>   
        
     </body>
-
-    <footer>
-      <%- include('../partials/04-footer')%>
-     </footer>
 
    
 
