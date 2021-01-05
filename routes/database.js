@@ -23,6 +23,7 @@ router.post('/cargaDatos',databaseMiddleware.auth, upload.any(), databaseControl
 
 router.get('/imagenesAdmin',databaseMiddleware.auth, databaseController.imagenesAdmin)
 router.post('/imagenesAdmin', databaseMiddleware.auth, databaseController.filtrarImagenes)
+router.post('/imagenesAdmin/cerrarSesion', databaseMiddleware.auth, databaseController.cerrarSesion)
 
 router.get('/editarImagen/:id',databaseMiddleware.auth, databaseController.verEditar)
 router.post('/editarImagen/:id',databaseMiddleware.auth, upload.any(), databaseMiddleware.editMiddleware, databaseController.editar)

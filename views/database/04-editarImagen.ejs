@@ -70,57 +70,75 @@
 
 
                                         <p  class="fluid">
-                                            <input type="checkbox" name="checkindex">
+                                            
+                                            <input type="checkbox" name="checkindex" <% if(imagenes.checkindex == "on"){ %>
+                                                checked
+                                            <% } %>>
                                             <label for="taste_1">¿Mostrar en Index?</label>
                                         </p>
 
 
 
                                         <div class="center container15">
-
                                                 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Paisajes">
+                                                <input type="checkbox" name="vista" value="Paisajes" <% if(imagenes.view.find(element => element == "Paisajes")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Paisajes</label>
                                             </p>
 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Retratos">
+                                                <input type="checkbox" name="vista" value="Retratos" <% if(imagenes.view.find(element => element == "Retratos")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Retratos</label>
                                             </p>
                                               
 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Urbano">
+                                                <input type="checkbox" name="vista" value="Urbano" <% if(imagenes.view.find(element => element == "Urbano")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Urbano</label>
                                             </p>
                                               
 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Arquitectura">
+                                                <input type="checkbox" name="vista" value="Arquitectura" <% if(imagenes.view.find(element => element == "Arquitectura")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Arquitectura</label>
                                             </p>                                                
 
                                            
 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Infancia">
+                                                <input type="checkbox" name="vista" value="Infancia" <% if(imagenes.view.find(element => element == "Infancia")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Infancia</label>
                                             </p>
                                               
 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Recuerdos">
+                                                <input type="checkbox" name="vista" value="Recuerdos" <% if(imagenes.view.find(element => element == "Recuerdos")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Recuerdos</label>
                                             </p>        
                                             
                                             <p>
-                                                <input type="checkbox" name="vista" value="Analogicas">
+                                                <input type="checkbox" name="vista" value="Analogicas" <% if(imagenes.view.find(element => element == "Analogicas")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Analogicas</label>
                                             </p>   
 
                                             <p>
-                                                <input type="checkbox" name="vista" value="Producto">
+                                                <input type="checkbox" name="vista" value="Producto" <% if(imagenes.view.find(element => element == "Producto")){ %>
+                                                    checked
+                                                <% } %>>
                                                 <label for="taste_1">Productos</label>
                                             </p>   
 

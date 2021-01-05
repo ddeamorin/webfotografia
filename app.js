@@ -22,7 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'damianfotografia'
+  secret: 'damianfotografia',
+  resave: false,
+  saveUninitialized: false,
 }))
 
 app.use('/', indexRouter);

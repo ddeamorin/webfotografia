@@ -4,6 +4,7 @@ const db = require('../database/models/index');
 
 let frontController = {
     verHome : function(req, res){
+      
       db.Overview.findAll({
         where: {
           checkindex: {

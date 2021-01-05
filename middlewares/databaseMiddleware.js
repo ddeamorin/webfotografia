@@ -1,11 +1,18 @@
-const {check, body} = require("express-validator");
+const {check, body, cookie} = require("express-validator");
+const db = require('../database/models/index');
 
 const databaseMiddleware = {
     auth : function(req,res,next) {
         if (req.session.adminLog == true){
         next()
-        }else if(req.cookies.recordar == 'true'){
-            next();
+        }else if(req.cookies.recordar){
+            db.Admin.findByPk(1).then(resultado => {
+            if(req.cookies.recordar == resultado.cookie_hash){
+            return next();
+            }else{
+            return res.redirect('/admin/login')
+            }
+        })
         }else{
             res.redirect('/admin/login')
         }

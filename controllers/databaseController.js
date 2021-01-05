@@ -1,31 +1,49 @@
 const { validationResult } = require("express-validator");
 const { Op, where } = require("sequelize");
 const db = require('../database/models/index');
+const cryptoRandomString = require('crypto-random-string');
+const bcrypt = require('bcryptjs');
+
 
 const databaseController = {
     verLogin: function(req,res){
             res.render('database/01-login')
         },
     ingresar: function (req, res){
-            if (req.body.email == 'deamorindamian@gmail.com' && req.body.contrasena == '*1986Damian'){
+
+      db.Admin.findByPk(1).then( resultado => {
+        if ((req.body.email == resultado.email) && (bcrypt.compareSync(req.body.contrasena, resultado.contrasena))){
               req.session.adminLog = true
               if (typeof req.body.recordar != 'undefined') {
-                res.cookie('recordar' , 'true', { maxAge: 31536000000, httpOnly: true })
+                let cookie_hash = cryptoRandomString({length: 60});
+                res.cookie('recordar' , cookie_hash, { maxAge: 31536000000, httpOnly: true })
+                db.Admin.update({cookie_hash:cookie_hash}, {where: {id:1}}).then(() =>
+                {Promise.resolve("Hash enviado a la base de datos!")})
               }
-              res.redirect('/admin/imagenesAdmin')
+              return res.redirect('/admin/imagenesAdmin')
             } else{
-              res.render('database/01-login', {mensaje:'Credenciales erroneas'})
+              return res.render('database/01-login', {mensaje:'Credenciales erroneas'})
             }
+          })
           },
+    cerrarSesion : function(req,res){
+      if(req.cookies.recordar){
+        db.Admin.update({cookie_hash : null}, {where:{id : 1}}).then(() => {
+        Promise.resolve("Hash eliminado de la base de datos!")
+      })
+      res.clearCookie('recordar')
+    }
+      req.session.destroy(() => {
+        return res.redirect("/")
+      });
+    },
     
     imagenesAdmin : function(req,res){
-        console.log("Cookies :  ", req.cookies);
             db.Overview.findAll().then(function(resultado){
               return res.render('database/02-imagenesAdmin', {imagenes:resultado})
             })
           },
     filtrarImagenes: function(req,res){
-      console.log(req.body.filtro)
       switch (req.body.filtro) {
         case 'id(asc)':
           db.Overview.findAll({
@@ -200,7 +218,8 @@ const databaseController = {
         res.render('database/03-cargaDatos')
     },
     cargaDatos : function(req, res){
-        let imagen = req.files[0].filename 
+        let imagen = req.files[0].filename
+        console.log(req.body.vista)
         if(req.body.checkindex == undefined){
           req.body.checkindex = "off"
         }
@@ -209,7 +228,6 @@ const databaseController = {
         }else{
           var vista = req.body.vista
         }
-        
         
           db.Overview.create({
           ruta: imagen,
@@ -229,6 +247,8 @@ const databaseController = {
       },
       verEditar : function(req,res){
         db.Overview.findByPk(req.params.id).then(function(resultado){
+         resultado.view = resultado.view.split(", ")
+         console.log(resultado.view)
           res.render('database/04-editarImagen', {imagenes : resultado})
         })
       },
@@ -247,38 +267,28 @@ const databaseController = {
         }else{
           var vistaEdit = req.body.vista
         }
-        if(typeof req.files[0] == "undefined"){
-          console.log("a")
 
-        db.Overview.update({
+        if(typeof req.files[0] != "undefined"){
+          let imagen = req.files[0].filename
+          db.Overview.update({
+            imagen : imagen
+          },{where: {id}}).then(resultado => {
+            Promise.resolve("Imagen actualizada!")
+          })
+        }
+          db.Overview.update({
           id : req.params.id,
+          view: vistaEdit,
           nombre : req.body.nombre,
           descripcion: req.body.descripcion,
           checkindex: req.body.checkindex,
           lugar: req.body.lugar,
           fecha:req.body.fecha,
-          view:vistaEdit,
           rating: req.body.rating
-        },{where: {id}}).then(function(){
-          res.render('database/05-finalizado', {mensaje: 'editado', nombre:`la obra ${req.body.nombre}`})
-        })}else{
-          console.log("b")
-
-          let imagen = req.files[0].filename
-          db.Overview.update({
-            id : req.params.id,
-            imagen: imagen,
-            nombre : req.body.nombre,
-            descripcion: req.body.descripcion,
-            checkindex: req.body.checkindex,
-            lugar: req.body.lugar,
-            fecha:req.body.fecha,
-            view:vistaEdit,
-            rating: req.body.rating
           },{where: {id}}).then(function(){
             res.render('database/05-finalizado', {mensaje: 'editado', nombre:`la obra ${req.body.nombre}`})
-          })
-        }
+          });
+        
       }
     },
       eliminarImagen:function(req,res){
