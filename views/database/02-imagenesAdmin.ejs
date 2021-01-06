@@ -112,7 +112,8 @@
 
                         <% for(let i = 0; i < imagenes.length; i++){ %>
 
-                            <tbody>
+                            <tbody data-aos="fade-up"
+                            data-aos-duration="2000">
                                 <tr class="mt-3" >
                                     <td><%= imagenes[i].id %></td>
                                     <td><%= imagenes[i].nombre %></td>
@@ -122,7 +123,7 @@
                                     <td><%= imagenes[i].lugar %></td>
 
 
-                                    <td><img src="/images/<%= imagenes[i].ruta %>" alt=""  class=" mx-auto d-block imglista"></td>
+                                    <td><a href="/images/<%= imagenes[i].ruta %>" data-lightbox="mygallery" data-title="<%= imagenes[i].nombre%> - <%= imagenes[i].lugar%>"><img src="/images/<%= imagenes[i].ruta %>" alt=""  class=" mx-auto d-block imglista"></a></td>
 
                                     <td class="text-center"><%= imagenes[i].fecha %></td>
                                     <td class="text-center"><%= imagenes[i].view %></td>
@@ -175,6 +176,8 @@
         </script>
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="/javascripts/lightbox-plus-jquery.min.js"></script>
+
     </body>
     
 </html>
