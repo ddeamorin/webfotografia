@@ -11,6 +11,9 @@ router.get("/paisajes", frontController.verPaisaje)
 
 router.get("/retratos", frontController.verRetratos)
 
+
+
+
 router.get('/contacto', frontController.verContacto)
 
 router.post('/contacto', frontController.enviarMail)

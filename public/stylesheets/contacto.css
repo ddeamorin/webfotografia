@@ -422,7 +422,7 @@ h3{
 
 
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
     .contact-box{
         grid-template-columns:  1fr;
     }
@@ -447,7 +447,7 @@ h3{
        
     }
     
-}
+} */
 
 
 
