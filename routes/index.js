@@ -11,6 +11,8 @@ router.get("/paisajes", frontController.verPaisaje)
 
 router.get("/retratos", frontController.verRetratos)
 
+router.get('/about', frontController.verAbout);
+
 
 
 

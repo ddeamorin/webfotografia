@@ -1,0 +1,54 @@
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+    padding: 5rem;    
+   
+    width: 100%;
+    
+}
+
+.imgabout{
+   max-width: 95%;
+   /* margin-left: 1rem; */
+   justify-content: flex-start;
+   
+   
+}
+
+
+.texto{
+font-family: Poppins;
+font-weight: normal;
+font-size: 12px;
+line-height: 20px;
+width: 70%;
+justify-content: flex-start;
+
+
+/* margin-left: 1rem; */
+}
+   
+
+.footerabout {
+
+    display: flex;
+    justify-content: flex-start;  
+    z-index: 1; 
+    align-items: center;
+    margin-top: 2rem;
+   
+}
+
+
+.mailabout{
+    transform: scale(1.9);
+    margin: 1rem;
+}
+    
+.instaabout{
+    transform: scale(1.1);
+    margin: 1rem;
+}
+
+   

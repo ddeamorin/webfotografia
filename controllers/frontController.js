@@ -45,6 +45,13 @@ let frontController = {
       res.render('front/02-contacto')
     },
 
+    verAbout:function(req,res){
+      res.render('front/04-about')
+    },
+
+
+    
+
     enviarMail: async function(req,res){
 
       let {nombre, email, mensaje} = req.body;
