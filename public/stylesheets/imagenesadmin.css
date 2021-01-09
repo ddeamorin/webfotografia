@@ -1,0 +1,50 @@
+.contact-boxbase{
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+
+.btnbase{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+    border: solid 1px black;
+    color: rgb(0, 0, 0);
+    transition: .3s;  
+    margin: .5rem;
+
+}
+
+.btnbase:hover{
+    background-color:rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.btnfiltro{
+    display: inline-block;
+    
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+    border: solid 1px black;
+    color: rgb(0, 0, 0);
+    transition: .3s;  
+    margin: .5rem;
+}
+
+.btnfiltro:hover{
+    background-color:rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 680px){
+    .tablacelu {
+    display: none; }
+}

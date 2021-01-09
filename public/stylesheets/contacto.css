@@ -1,5 +1,3 @@
-
-
 .container9{
     display: flex;
     justify-content: center;
@@ -7,7 +5,6 @@
     width: 100%;
     height: 100%;
     padding: 5% 1%;     
-   
    
 }
 
@@ -21,9 +18,6 @@
     z-index: -2;
    
 } 
-
-
-
 
 .containerfinalizado{
     /* position: absolute; */
@@ -47,8 +41,6 @@
    
 } 
 
-
-
 .container10{
     /* position: absolute; */
     display: flex;
@@ -56,13 +48,8 @@
     align-items: center;
     width: 100%;
     height: 100%;
-   
-   
     padding: 3% 1%;
-    
-   
   
-   
 }
 
 .container10:after{
@@ -75,7 +62,6 @@
     z-index: -2;
    
 } 
-
 
 
 .container15{
@@ -112,9 +98,7 @@
     text-align: center;
     background-color: rgb(255, 255, 255);     box-shadow:0.1em 0.2em 2em rgba(0,0,0,0.1)     
   
-      
-    
-
+  
 }
 .contact-boxf{
     max-width: 1200px;   
@@ -125,17 +109,6 @@
     text-align: center;
     background-color:rgb(255, 255, 255); 
     box-shadow:0.1em 0.2em 5em rgba(0,0,0,0.1)       
-
-}
-
-
-.contact-boxi{     
-    text-align: center;
-    margin-left: 50rem;
-   
-  
-    background-color:rgb(255, 255, 255);   
-    
 
 }
 
@@ -161,37 +134,28 @@
 
 }
 
-
 .leftlogin{
 
     height: 100%;  
     background: url(../images/img/24.jpg) no-repeat center;
-    background-size: cover;
-   
+    background-size: cover;   
 
 }
 
-
 .leftfinalizado{
     display: flex;
-
-
     height: 100%;  
     background: url(../images/img/24.jpg) no-repeat center;
     background-size: cover;
     display: none;
-   
-
+  
 }
-
-
 
 .right{
     padding: 10px 30px;
     border: 0.3px solid black;
 }
     
-
 .rightarriba{
     /* display: flex; */
 
@@ -200,15 +164,13 @@
 }
 
 
-
-
 h2{
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 10px;
     font-size: 15px;
-
 }
+
 
 h2:after{
     
@@ -223,9 +185,6 @@ h2:after{
     background-color: #a5a7a6;
     
 }
-
-
-
 
 .footerc{
     display: flex;
@@ -242,29 +201,14 @@ h3{
     font-weight: 300;
 }
 
-.titulobase{
-
-    padding-bottom: 0px;
-    margin-top: 30px;
-    margin-bottom: 0px;
-    font-size: 1.8rem;
-    font-weight: 300;
-
-}
-
-
-
-
-
 .instag{
 
     padding-bottom: 0px;
     margin-top: 25px;
     margin-bottom: 0px;
     margin-left: 10px;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
-
 
 
 .field{
@@ -293,7 +237,6 @@ h3{
 .area{
     min-width: 150px;
 
-
 }
 
 .btn{
@@ -312,10 +255,7 @@ h3{
 .btn:hover{
     background-color:rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-
 }
-
-
 
 .btn4{
     width: 50%;
@@ -333,18 +273,12 @@ h3{
 .btn4:hover{
     background-color:rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-
 }
 
 
-
-.btn5
-{
-    display: inline-block;
-
-    /* justify-content: center;
-  
-    width: 12%; */
+.btn5{
+    display: flex;
+    justify-content: center;
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
     background-color: rgb(255, 255, 255);
@@ -353,19 +287,19 @@ h3{
     border: solid 1px black;
     color: rgb(0, 0, 0);
     transition: .3s;    
-   
-    
 }
+
 
 .btn5:hover{
     background-color:rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-
 }
 
 
+
 .btn6{   
-    display: inline-block;    
+    display: flex;
+    justify-content: center;  
     margin-bottom: 1.5rem;     
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
@@ -381,7 +315,6 @@ h3{
 .btn6:hover{
     background-color:rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-
 }
 
 
@@ -397,8 +330,6 @@ h3{
 
     .left{
         height: 200px;
-      
-       
     }
     
 }
@@ -412,12 +343,9 @@ h3{
     .leftlogin{
         height: 200px;
         display: none;
-       
     }
     
 }
-
-
 
 @media screen and (max-width: 480px) {
     .contact-box{

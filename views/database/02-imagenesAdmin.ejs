@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,57 +13,42 @@
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <title>Base de datos fotografica</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     </head>
 
     <link rel="shortcut icon" type="image/jpg" href="/images/img/fv.svg"/>
 
     <body>
 
-
-
-        
-
-        <div class="container-fluid">     
+        <div class="container-fluid justify-content-center">     
             
             <div>
 
                 <h3 class= "text-center mt-5 mb-3 titulobase">Base de datos fotográfica</h3>
 
+            </div>
+
+
+            <div class="contact-boxbase">
+            
+                <a href="/admin/cargaDatos" style="text-decoration: none;"><button type="submit" class="btnbase">Agregar Imagen</button></a>
+                
+                <a href="/" style="text-decoration: none;"><button type="submit" class="btnbase">Retornar al inicio</button></a>    
+                
+                <form action="/admin/imagenesAdmin/cerrarSesion" method="POST"><a href="/" style="text-decoration: none;"><button type="submit" class="btnbase">Cerrar sesion</button></a></form>
 
             </div>
 
 
-            
-
-
-            <div class="contact-boxi">
-            
-
-                <a href="/admin/cargaDatos" style="text-decoration: none;"><button type="submit" class="btn6">Agregar Imagen</button></a>
-                
-                <a href="/" style="text-decoration: none;"><button type="submit" class="btn5">Retornar al inicio</button></a>    
-                
-                <form action="/admin/imagenesAdmin/cerrarSesion" method="POST"><a href="/" style="text-decoration: none;"><button type="submit" class="btn5">Cerrar sesion</button></a></form>
-
-             
-
-            </div>
-
-
-
-            <div class="row m-4" style="font-size: 0.7rem;">
+            <div class="row p-5" style="font-size: 0.7rem;">
                 <div class="col">
 
+                    <table class="table table-responsive-sm  table-responsive-md table-responsive-lg justify-content-center table-hover table-stripped table-bordered table-light " >
+                        <thead class="bg-secondary text-black">
 
-                    <table class="table table-responsive table-hover table-stripped table-bordered table-light " >
-                        <thead class="bg-secondary text-black mt-3">
+                            <form action="/admin/imagenesAdmin" method="post" class="contact-boxfiltro field area">
 
-
-                            <form action="/admin/imagenesAdmin" method="post" class="contact-box field area">
-
-
-
-                               <select name="filtro">
+                               <select class ='btnbase btnfiltro' name="filtro ">
                                     <option value="todas">TODAS</option>
                                     <option value="overview">OVERVIEW</option>
                                     <option value="paisajes">PAISAJES</option>
@@ -70,7 +56,7 @@
                                     <option value="urbano">URBANO</option>
                                     <option value="analogicas">ANALOGICAS</option>
                                     <option value="infancia">INFANCIA</option>
-                                    <option value="arquitectura">ARQUITECTURA</option>
+                                    <option value="arquitectura"></option>
                                     <option value="producto">PRODUCTO</option>
                                     <option value="id(asc)">ID (ASC)</option>
                                     <option value="id(desc)">ID (DESC)</option>
@@ -80,29 +66,22 @@
                                     <option value="lugar(a-z)">LUGAR (A-Z)</option>
                                     <option value="lugar(z-a)">LUGAR (Z-A)</option>
                                     <option value="vista(z-a)">VISTA (Z-A)</option>
+                                </select>
 
-
-
-                               </select>
-
-                               <button type="submit"><i class="fas fa-filter"></i></button>
-
-                            
-                            
-                            
+                               <button class= "btnfiltro" type="submit"><i class="fas fa-filter"></i></button>
                             
                             </form>
 
 
-                            <tr class="text-center thead-dark mt-3">
+                            <tr class="text-center thead-dark">
                                 <th scope="col">id </th> 
                                 <th scope="col">Nombre</th> 
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Rating</th>
-                                <th scope="col">Index</th>
+                                <th class="tablacelu" scope="col">Descripcion</th>
+                                <th class="tablacelu" scope="col">Rating</th>
+                                <th class="tablacelu" scope="col">Index</th>
                                 <th scope="col">Lugar</th>
                                 <th scope="col">Imagen</th>
-                                <th scope="col">Fecha</th>
+                                <th class="tablacelu" scope="col">Fecha</th>
                                 <th scope="col">Vista</th>
                                 <th scope="col">Editar</th>
                                 <th scope="col">Eliminar</th>
@@ -117,15 +96,14 @@
                                 <tr class="mt-3" >
                                     <td><%= imagenes[i].id %></td>
                                     <td><%= imagenes[i].nombre %></td>
-                                    <td><%= imagenes[i].descripcion %></td>
-                                    <td><%= imagenes[i].rating %></td>
-                                    <td><%= imagenes[i].checkindex %></td>
+                                    <td class="tablacelu"><%= imagenes[i].descripcion %></td>
+                                    <td class="tablacelu" ><%= imagenes[i].rating %></td>
+                                    <td class="tablacelu" ><%= imagenes[i].checkindex %></td>
                                     <td><%= imagenes[i].lugar %></td>
-
 
                                     <td><a href="/images/<%= imagenes[i].ruta %>" data-lightbox="mygallery" data-title="<%= imagenes[i].nombre%> - <%= imagenes[i].lugar%>"><img src="/images/<%= imagenes[i].ruta %>" alt=""  class=" mx-auto d-block imglista"></a></td>
 
-                                    <td class="text-center"><%= imagenes[i].fecha %></td>
+                                    <td class="text-center tablacelu"><%= imagenes[i].fecha %></td>
                                     <td class="text-center"><%= imagenes[i].view %></td>
                                     
                                     <td class="text-center"><a href="/admin/editarImagen/<%= imagenes[i].id %>" style="text-decoration: none;" class="btn4">Editar</a></td>
@@ -139,18 +117,16 @@
 
                     </table>   
 
-
                 </div>
             </div>
 
-            <div class="contact-boxi">
-                <a href="/admin/cargaDatos" style="text-decoration: none;"><button type="submit" class="btn6">Agregar Imagen</button></a>
-                <a href="/" style="text-decoration: none;"><button type="submit" class="btn5">Retornar al inicio</button></a>    
+            <div class="contact-boxbase">
+                <a href="/admin/cargaDatos" style="text-decoration: none;"><button type="submit" class="btnbase">Agregar Imagen</button></a>
+                <a href="/" style="text-decoration: none;"><button type="submit" class="btnbase">Retornar al inicio</button></a>
+                <form action="/admin/imagenesAdmin/cerrarSesion" method="POST"><a href="/" style="text-decoration: none;"><button type="submit" class="btnbase">Cerrar sesion</button></a></form>   
+                 
     
             </div>
-
-
-            
 
 
 
@@ -158,25 +134,20 @@
 
 
 
-        
-
-
         <br>
         <br>
         <br>
         <br>
         <br>
 
+        <footer>
+            <%- include('../partials/04-footer')%>
+        </footer>
 
 
 
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        <script src="/javascripts/lightbox-plus-jquery.min.js"></script>
+
+
 
     </body>
     

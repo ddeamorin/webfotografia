@@ -10,6 +10,7 @@ const masonryLayout = (containerElem,itemsElems,columns) => {
     }
     
     
+    
     for(let m = 0; m < Math.ceil(itemsElems.length / columns); m++) {
       for(let n = 0; n < columns; n++) {
         let item = itemsElems[m * columns + n]
@@ -18,9 +19,8 @@ const masonryLayout = (containerElem,itemsElems,columns) => {
       } 
     }
 }
-  
-masonryLayout(document.getElementById('gallery'), document.querySelectorAll('.gallery-item'), 3)
 
+masonryLayout(document.getElementById('gallery'), document.querySelectorAll('.gallery-item'), 3)
 
 
 

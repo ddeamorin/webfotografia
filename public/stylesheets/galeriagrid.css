@@ -14,12 +14,18 @@ img{
 .masonry-layout {
     --columns: 4;
     --gap: 2rem;
-    padding: 2rem;
+  
     
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-columns: repeat(auto-fit, minmax( 500px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
     grid-gap: var(--gap); 
+    padding: 3rem;
+    justify-content: center;
+    
 }
+
 .masonry-layout.columns-1 {--columns: 1; }
 .masonry-layout.columns-2 {--columns: 2; }
 .masonry-layout.columns-3 {--columns: 3;}
@@ -31,17 +37,15 @@ img{
    
 }
 
-.masonry-layout img {
+.imggaleria {
    
     filter: brightness(1);
     cursor: pointer;
-    transition: s linear;
+    transition:  all 1s ease;
     
 }
     
- 
-
-.masonry-layout img:hover {
+.imggaleria:hover {
     
     filter: brightness(1.1);
 }

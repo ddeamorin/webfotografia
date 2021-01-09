@@ -13,6 +13,10 @@
 .insta{
   transform: scale(1.6);
 }
+.contactomail{
+  transform: scale(1.6);
+}
+
 
 nav{  
 
@@ -178,7 +182,7 @@ li{
 
 
 
-/* footer */
+
 
 .insta{
   transform: scale(1.6);
@@ -210,88 +214,3 @@ nav{
 }
 
 
-/* footer */
-
-
-
-.contenedorfooter{
-  display: flex;
-  justify-content: center;
-  max-width: auto;
-  background-color: rgba(255, 255, 255, 0.97);
-    
-}
-
-.footer1{
-
-  display: flex;
- justify-content: space-between;  
- width: 10%;
-  z-index: 1;
-  margin: 1rem 1rem 0.3rem 1rem;
-  
-}
-
-
-.contenedorfooter2{
-  display: flex;
-  justify-content: center;
-  max-width: auto;
-  background-color: rgba(255, 255, 255, 0.97);
-    
-}
-
-  .footer2{
-
-    display: flex;
-  justify-content: space-between;  
-  width: 35%;
-    z-index: 1;
-    margin: 1.5rem 1.5rem;
-    
-  }
-
-
-
-  .derechosdesarrollo{
-    display: flex;
-    align-items: center;
-
-  }
-
-
-li{
-  list-style: none;
-  transition: 0.5s;
-}
-
-
-.footer1 a{
-  color: black;
-  text-decoration: none;
-  font-weight: 300;
-  font-size: 12px;
-  letter-spacing: 2px;
-    
-}
-
-
-
-.mail{
-  transform: scale(2.2);
-}
-
-
-.gruacopy{
-
-  transform: scale(.8);
-
-}
-
-
-
-.footermain{
-
-  background-color: rgba(255, 255, 255, 0.97);
-
-}
