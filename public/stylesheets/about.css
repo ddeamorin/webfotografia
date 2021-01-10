@@ -2,19 +2,17 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax( 500px, 2fr));
     grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
+    grid-gap: 1rem;
    
     padding: 4rem;    
    
-    width: 100%;
+    width: 75%;
     
 }
 
 
 .imgabout{
-   max-width: 90%;
-   /* margin-left: 1rem; */
-   justify-content: flex-start;
-  
+   max-width: 100%;
    
    
 }
@@ -27,7 +25,9 @@ font-size: 12px;
 line-height: 20px;
 width: 70%;
 justify-content: flex-start;
-margin-top: 2rem;
+margin-top: 1rem;
+
+
 
 
 /* margin-left: 1rem; */
@@ -41,6 +41,7 @@ margin-top: 2rem;
     z-index: 1; 
     align-items: center;
     margin-top: 2rem;
+    
    
 }
 
