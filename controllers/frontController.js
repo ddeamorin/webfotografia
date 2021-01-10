@@ -28,18 +28,32 @@ let frontController = {
         res.render("front/01-index", {imagenes:resultado})
       })
       },
-  verRetratos : function(req,res){
-    db.Overview.findAll({
-      where: {
-        view: {
-          [Op.like]: '%Retratos%'
-        }
-      },
-    order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
-          console.log(resultado)
-          res.render("front/01-index", {imagenes:resultado})
-        })
-      },
+    verRetratos : function(req,res){
+      db.Overview.findAll({
+        where: {
+          view: {
+            [Op.like]: '%Retratos%'
+          }
+        },
+      order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
+            console.log(resultado)
+            res.render("front/01-index", {imagenes:resultado})
+          })
+        },
+
+    verInfancia : function(req,res){
+      db.Overview.findAll({
+        where: {
+          view: {
+            [Op.like]: '%Infancia%'
+          }
+        },
+      order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
+            console.log(resultado)
+            res.render("front/01-index", {imagenes:resultado})
+          })
+        },
+      
 
     verContacto:function(req,res){
       res.render('front/02-contacto')
@@ -49,8 +63,7 @@ let frontController = {
       res.render('front/04-about')
     },
 
-
-    
+     
 
     enviarMail: async function(req,res){
 

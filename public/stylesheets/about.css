@@ -1,17 +1,20 @@
 .contenedor{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax( 500px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
    
-    padding: 5rem;    
+    padding: 4rem;    
    
     width: 100%;
     
 }
 
+
 .imgabout{
-   max-width: 95%;
+   max-width: 90%;
    /* margin-left: 1rem; */
    justify-content: flex-start;
+  
    
    
 }
@@ -24,6 +27,7 @@ font-size: 12px;
 line-height: 20px;
 width: 70%;
 justify-content: flex-start;
+margin-top: 2rem;
 
 
 /* margin-left: 1rem; */
