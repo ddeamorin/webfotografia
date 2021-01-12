@@ -87,7 +87,6 @@
    
 } 
 
-
 .contact-box{
         max-width: 800px;   
     /* max-height: 100px; */
@@ -114,33 +113,13 @@
 
 .left{
     height: 100%;  
-    background: url(../images/img/8.jpg) no-repeat center;
+    background: url(../images/imagen-1609544543529.jpg) no-repeat center;
     background-size: cover;    
 
 }
 
-.leftcarga{
-    height: 100%;  
-    background: url(../images/img/20.jpg) no-repeat center;
-    background-size: cover; 
 
-}
 
-.lefteditar{
-    height: 100%;  
-    background: url(../images/img/19.jpg) no-repeat center;
-    background-size: cover;
-    /* box-shadow:0.1em 0.2em 5em rgba(0,0,0,0.1) */
-
-}
-
-.leftlogin{
-
-    height: 100%;  
-    background: url(../images/img/24.jpg) no-repeat center;
-    background-size: cover;   
-
-}
 
 .leftfinalizado{
     display: flex;

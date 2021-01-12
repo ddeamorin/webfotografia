@@ -31,6 +31,16 @@ body{
 } 
 
 
+
+
+.leftcarga{
+    height: 100%;  
+    background: url(../images/imagen-1609545194323.jpg) no-repeat center;
+    background-size: cover; 
+
+}
+
+
 .contact-boxcarga{
     max-width: 800px;   
 /* max-height: 100px; */
