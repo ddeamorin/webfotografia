@@ -1,18 +1,23 @@
 .contenedor{
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax( 700px, 2fr));
     grid-template-columns: repeat(auto-fit, minmax( 500px, 2fr));
     grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr));
     grid-gap: 1rem;
    
     padding: 4rem;    
+    justify-content: center;
    
-    width: 75%;
+    width: 85%;
     
 }
 
 
 .imgabout{
-   max-width: 100%;
+    
+   max-width: 90%;
+   object-fit:fill;
+   justify-content: flex-end;
    
    
 }
@@ -23,7 +28,7 @@ font-family: Poppins;
 font-weight: normal;
 font-size: 12px;
 line-height: 20px;
-width: 70%;
+width: 100%;
 justify-content: flex-start;
 margin-top: 1rem;
 

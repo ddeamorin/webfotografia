@@ -25,6 +25,10 @@
     color: rgb(255, 255, 255);
 }
 
+.imglista{
+    max-width: 50%;
+}
+
 .btnfiltro{
     display: inline-block;
     
@@ -47,4 +51,9 @@
 @media screen and (max-width: 680px){
     .tablacelu {
     display: none; }
+
+    .imglista{
+        max-width: 35%;
+    }
+    
 }

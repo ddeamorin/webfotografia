@@ -43,7 +43,7 @@
             <div class="row p-5" style="font-size: 0.7rem;">
                 <div class="col">
 
-                    <table class="table table-responsive-sm  table-responsive-md table-responsive-lg justify-content-center table-hover table-stripped table-bordered table-light " >
+                    <table class="table table-responsive-lm  table-responsive-sm justify-content-center table-hover table-stripped table-bordered table-light " >
                         <thead class="bg-secondary text-black">
 
                             <form action="/admin/imagenesAdmin" method="post" class="contact-boxfiltro field area">
@@ -79,7 +79,7 @@
                                 <th class="tablacelu" scope="col">Descripcion</th>
                                 <th class="tablacelu" scope="col">Rating</th>
                                 <th class="tablacelu" scope="col">Index</th>
-                                <th scope="col">Lugar</th>
+                                <th class="tablacelu" scope="col">Lugar</th>
                                 <th scope="col">Imagen</th>
                                 <th class="tablacelu" scope="col">Fecha</th>
                                 <th scope="col">Vista</th>
@@ -99,7 +99,7 @@
                                     <td class="tablacelu"><%= imagenes[i].descripcion %></td>
                                     <td class="tablacelu" ><%= imagenes[i].rating %></td>
                                     <td class="tablacelu" ><%= imagenes[i].checkindex %></td>
-                                    <td><%= imagenes[i].lugar %></td>
+                                    <td class="tablacelu"><%= imagenes[i].lugar %></td>
 
                                     <td><a href="/images/<%= imagenes[i].ruta %>" data-lightbox="mygallery" data-title="<%= imagenes[i].nombre%> - <%= imagenes[i].lugar%>"><img src="/images/<%= imagenes[i].ruta %>" alt=""  class=" mx-auto d-block imglista"></a></td>
 
