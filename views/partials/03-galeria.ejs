@@ -19,7 +19,7 @@
   <div class="gallery" id="gallery">
     <% for(let i = 0; i < imagenes.length; i++){ %>
 
-      <a href="/images/<%= imagenes[i].ruta %>" data-lightbox="mygallery" data-title="<%= imagenes[i].nombre%>-<%= imagenes[i].lugar%>" class="gallery-item " ><img src="/images/<%= imagenes[i].ruta %>" data-aos="fade-up"
+      <a href="/images/<%= imagenes[i].ruta %>" data-lightbox="mygallery" data-title="<%= imagenes[i].nombre%>-<%= imagenes[i].lugar%>" class="gallery-item " ><img loading= "lazy" src="/images/<%= imagenes[i].ruta %>" data-aos="fade-up"
         data-aos-duration="2000" alt="" class="imggaleria"></a>
 
     <% } %>

@@ -41,11 +41,11 @@ let frontController = {
           })
         },
 
-    verInfancia : function(req,res){
+    verProducto : function(req,res){
       db.Overview.findAll({
         where: {
           view: {
-            [Op.like]: '%Infancia%'
+            [Op.like]: '%Producto%'
           }
         },
       order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
