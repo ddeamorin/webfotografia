@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes){
         },
 
         checkindex: {
-            type: DataTypes.STRING(3),
+            type: DataTypes.INTEGER,
             "allowNull" : false
         },
 

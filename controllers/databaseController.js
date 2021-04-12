@@ -219,10 +219,6 @@ const databaseController = {
     },
     cargaDatos : function(req, res){
         let imagen = req.files[0].filename
-        console.log(req.body.vista)
-        if(req.body.checkindex == undefined){
-          req.body.checkindex = "off"
-        }
         if (Array.isArray(req.body.vista)==true) {
           var vista = req.body.vista.join(", ")
         }else{
@@ -259,9 +255,6 @@ const databaseController = {
           res.render(`database/04-editarImagen`, {errors : errors.errors, imagenes:req.body})
         }else{
         id = req.params.id
-        if(req.body.checkindex == undefined){
-          req.body.checkindex = "off"
-        }
         if (Array.isArray(req.body.vista)==true) {
           var vistaEdit = req.body.vista.join(", ")
         }else{

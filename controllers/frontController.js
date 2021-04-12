@@ -8,11 +8,10 @@ let frontController = {
       db.Overview.findAll({
         where: {
           checkindex: {
-            [Op.like]: '%on%'
+            [Op.gt]: 0
           }
         },
-      order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
-        console.log(resultado)
+      order: [['checkindex', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
         res.render("front/01-index", {imagenes:resultado})
       })
     },
@@ -24,7 +23,6 @@ let frontController = {
           }
         },
       order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
-        console.log(resultado)
         res.render("front/01-index", {imagenes:resultado})
       })
       },
@@ -36,7 +34,6 @@ let frontController = {
           }
         },
       order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
-            console.log(resultado)
             res.render("front/01-index", {imagenes:resultado})
           })
         },
@@ -49,7 +46,6 @@ let frontController = {
           }
         },
       order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
-            console.log(resultado)
             res.render("front/01-index", {imagenes:resultado})
           })
         },
