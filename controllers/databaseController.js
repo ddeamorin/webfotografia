@@ -254,7 +254,7 @@ const databaseController = {
           console.log(errors)
           res.render(`database/04-editarImagen`, {errors : errors.errors, imagenes:req.body})
         }else{
-        id = req.params.id
+        let id = req.params.id
         if (Array.isArray(req.body.vista)==true) {
           var vistaEdit = req.body.vista.join(", ")
         }else{
@@ -262,11 +262,12 @@ const databaseController = {
         }
 
         if(typeof req.files[0] != "undefined"){
+          console.log(req.files[0])
           let imagen = req.files[0].filename
           db.Overview.update({
-            imagen : imagen
-          },{where: {id}}).then(resultado => {
-            Promise.resolve("Imagen actualizada!")
+            ruta : imagen
+          },{where: {id : req.params.id}}).then(resultado => {
+            console.log(resultado)
           })
         }
           db.Overview.update({

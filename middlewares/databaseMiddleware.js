@@ -1,5 +1,7 @@
 const {check, body, cookie} = require("express-validator");
 const db = require('../database/models/index');
+const path = require('path');
+
 
 const databaseMiddleware = {
     auth : function(req,res,next) {
