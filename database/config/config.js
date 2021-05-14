@@ -1,20 +1,19 @@
 module.exports = {
     "development": {
       // DATABASE GODADDY
-      // "username": "activaco_admin",
+      // "username": "deamorindamian",
       // "password": "*1986Damian---",
-      // "database": "activaco_activaco	",
-      // "host": "172.104.4.154",
+      // "database": "dbfotografia",
+      // "host": "208.109.41.230",
       // "dialect": "mysql"
 
-      
-      //DATABASE LOCAL
-      
-    "username": "root",
-    "password": "",
-    "database": "fotografia",
-    "host": "localhost",
-    "dialect": "mysql"
+     
+    //  DATABASE LOCAL
+   "username": "root",
+   "password": "",
+   "database": "fotografia",
+   "host": "localhost",
+   "dialect": "mysql"
     
   },
   "test": {
