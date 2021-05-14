@@ -11,7 +11,7 @@ let frontController = {
             [Op.gt]: 0
           }
         },
-      order: [['checkindex', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
+      order: [['checkindex', 'ASC'], ['nombre', 'ASC']]}).then(resultado => {
         res.render("front/01-index", {imagenes:resultado})
       })
     },
@@ -73,18 +73,18 @@ let frontController = {
       <h1>Mensaje: ${mensaje}</h1>
       `
       const transporter = nodemailer.createTransport({
-        host: 'mail.damian-deamorin.com',
-        port: 587,
-        secure: false,
+        host: 'p3plzcpnl434611.prod.phx3.secureserver.net',
+        port: 465,
+        secure: true,
         auth : {
-          user: 'contacto@damian-deamorin.com',
-          pass: '**DamianAriel'
+          user: 'contacto@damiandeamorin.com',
+          pass: 'Damian32010734'
         },
-      tls: {rejectUnauthorized:false}})
+      tls: {rejectUnauthorized:true}})
 
         const info = await transporter.sendMail({
-          from: "'Pagina Fotografia' <contacto@damian-deamorin.com>",
-          to: 'contacto@damian-deamorin.com',
+          from: "'Pagina Fotografia' <contacto@damiandeamorin.com>",
+          to: 'contacto@damiandeamorin.com',
           subject:'Consulta fotografia',
           html: contentHTML
         })
