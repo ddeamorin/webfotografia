@@ -22,7 +22,7 @@ let frontController = {
             [Op.like]: '%Paisajes%'
           }
         },
-      order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
+      order: [['rating', 'ASC'], ['nombre', 'ASC']]}).then(resultado => {
         res.render("front/01-index", {imagenes:resultado})
       })
       },
@@ -33,7 +33,7 @@ let frontController = {
             [Op.like]: '%Retratos%'
           }
         },
-      order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
+      order: [['rating', 'ASC'], ['nombre', 'ASC']]}).then(resultado => {
             res.render("front/01-index", {imagenes:resultado})
           })
         },
@@ -45,7 +45,7 @@ let frontController = {
             [Op.like]: '%Producto%'
           }
         },
-      order: [['rating', 'DESC'], ['nombre', 'ASC']]}).then(resultado => {
+      order: [['rating', 'ASC'], ['nombre', 'ASC']]}).then(resultado => {
             res.render("front/01-index", {imagenes:resultado})
           })
         },

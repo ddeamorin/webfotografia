@@ -96,9 +96,10 @@ const databaseController = {
           db.Overview.findAll({
             where: {
               checkindex: {
-                [Op.like]: '%on%'
-              }
+                [Op.gt]: '0'
+              },
             },
+            order : [["checkindex", "ASC"]]
           }).then(resultado => {
             console.log(resultado)
             res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -111,6 +112,7 @@ const databaseController = {
                   [Op.like]: '%Paisajes%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
               console.log(resultado)
               res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -123,6 +125,7 @@ const databaseController = {
                   [Op.like]: '%Retratos%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -135,6 +138,7 @@ const databaseController = {
                   [Op.like]: '%Urbano%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -147,6 +151,7 @@ const databaseController = {
                   [Op.like]: '%Arquitectura%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -159,6 +164,7 @@ const databaseController = {
                   [Op.like]: '%Analogicas%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -171,6 +177,7 @@ const databaseController = {
                   [Op.like]: '%Infancia%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -183,6 +190,7 @@ const databaseController = {
                   [Op.like]: '%Arquitectura%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
@@ -195,6 +203,7 @@ const databaseController = {
                   [Op.like]: '%Producto%'
                 }
               },
+              order : [["rating", "ASC"]]
             }).then(resultado => {
                   console.log(resultado)
                   res.render("database/02-imagenesAdmin", {imagenes:resultado})
